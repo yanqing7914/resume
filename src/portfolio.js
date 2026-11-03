@@ -120,6 +120,11 @@ const educationInfo = {
       subHeader: "人工智能 硕士研究生",
       duration: "2025.09 – 2028.06",
       desc: "研究方向：多模态图文一致性检测"
+    },
+    {
+      schoolName: "河南理工大学",
+      logo: require("./assets/images/hpuLogo.png"),
+      subHeader: "计算机科学与技术 本科"
     }
   ]
 };
