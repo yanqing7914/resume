@@ -25,7 +25,9 @@ export default function Greeting() {
               >
                 {" "}
                 {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                <span className="wave-emoji" aria-hidden="true">
+                  {emoji("👋")}
+                </span>
               </h1>
               <p
                 className={
@@ -39,21 +41,27 @@ export default function Greeting() {
               <div id="resume" className="empty-div"></div>
               <SocialMedia />
               <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
+                <Button text="联系我" href="#contact" />
                 {greeting.resumeLink && (
                   <a
                     href={require("./resume.pdf")}
-                    download="Resume.pdf"
+                    download={`${greeting.username}的简历.pdf`}
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text="下载简历" />
                   </a>
                 )}
               </div>
             </div>
           </div>
           <div className="greeting-image-div">
-            {illustration.animated ? (
+            {greeting.avatar ? (
+              <img
+                className="greeting-avatar"
+                alt={`${greeting.username}的照片`}
+                src={greeting.avatar}
+              ></img>
+            ) : illustration.animated ? (
               <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
