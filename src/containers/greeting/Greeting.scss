@@ -43,7 +43,7 @@
 }
 
 .greeting-text {
-  font-size: 70px;
+  font-size: 56px; // 中文标题在 70px 下会把 👋 挤到第二行
   line-height: 1.1;
   color: $textColor !important;
 }
@@ -128,14 +128,15 @@
     text-align: center;
   }
   .greeting-main {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse; // 手机端照片在上、文字在下
   }
   .greeting-image-div {
-    height: 256px;
+    height: auto;
   }
   .greeting-image-div > img.greeting-avatar {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
   }
 }
 
